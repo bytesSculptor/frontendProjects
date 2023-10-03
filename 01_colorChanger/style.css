@@ -1,0 +1,37 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    background-color: #212121;
+}
+
+
+.div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+}
+
+#rectangle{
+    height: 200px;
+    width: 400px;
+    border: 2px solid white;
+}
+
+
+/* 
+
+1. mouse ko track krna hai jb wo rect ke upar hai✅
+2. ab check krna hai center se left pr hai ya right pr ✅
+3. ab calculate krna hai center se kitna left pr hai aur kitna right pr ✅
+4. jitna left pr hai utna intensity increase krna hai color ka aur same for right
+
+*/
