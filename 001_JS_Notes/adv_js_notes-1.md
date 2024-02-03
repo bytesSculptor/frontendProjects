@@ -69,6 +69,35 @@
 - callback fnc ek normal fnc ki tarah hi hota hai
 - aisa fnc jo kuch time baad ya fir kuch event khatam hone ke baad chle use hum callback fnc kahte hai
 - jaisa ki agr hum kuch code ko baad me chalana chahte hai to use hm ek fnc me daal dete hai, aur iss fnc ko bolte hai jb baaki ka code chl jaega to fir iss fnc ko chla dena
+- Callback function ek aisa function hai jo kisi aur function mein pass kiya jaata hai aur jab woh function complete ho jaata hai, toh callback function execute hota hai. Iska use asynchronous programming mein hota hai, jisme ek task ko shuru karke dusre task ko continue kiya ja sakta hai bina wait kiye.
+
+Example:
+
+```javascript
+//Function to add two numbers
+function addNumbers(a, b, callback) {
+  const result = a + b;
+
+  // Yahan callback function ko invoke kiya ja raha hai
+  callback(result);
+}
+
+// Ek callback function
+function displayResult(sum) {
+  console.log("Sum is: " + sum);
+}
+
+// Original function ko call kiya, aur callback function ko pass kiya
+addNumbers(5, 10, displayResult);
+
+// Output: Sum is: 15
+```
+
+Is example mein, `addNumbers` ek function hai jo 2 numbers ko add karta hai. Lekin isme ek aur parameter `callback` bhi hai, jisme hum ek function pass kar rahe hain (`displayResult`). Jab `addNumbers` execute hota hai, toh woh result ko calculate karta hai aur uss result ko `callback` function ke through display karne ke liye use karta hai.
+
+Jab hum `addNumbers(5, 10, displayResult)` likhte hain, toh `displayResult` function ek callback function ke roop mein kaam karta hai. Iska output console par "Sum is: 15" hoga.
+
+Is tareeke se, hum callback functions ka istemal karke asynchronous code likh sakte hain, jisse hum ek task ke complete hone ke baad dusre task ko shuru kar sakein.
 
 ## First Class Function
 - JS me concept hota hai ki hm funcitons ko as a value use kr skte hai
